@@ -20,8 +20,11 @@ func main() {
 	router.Use(middleware.Logger)
 
 	router.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		templ.Handler(comp.BasicHeader("Hello", comp.Hello())).ServeHTTP(w, r)
+		templ.Handler(comp.BasicHeader("Hello", comp.IndexBody())).ServeHTTP(w, r)
 	})
+
+	fs := http.FileServer(http.Dir("./static/"))
+	router.Handle("/static/*", http.StripPrefix("/static/", fs))
 
 	fmt.Printf("server is running on port %s\n", os.Getenv("PORT"))
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), router)

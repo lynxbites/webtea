@@ -8,15 +8,56 @@ templ BasicHeader(name string, body templ.Component) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{name}</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Marck+Script&family=Pattaya&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/style.css">
     </head>
-    <body>
-        @body
-    </body>
+        <body class="h-[200dvh]">
+            @body
+        </body>
     </html>
 
 }
 
 templ Hello() {
     <p>Hi!</p>
+}
+
+templ IndexBody() {
+    <div class="content-center bg-cover bg-center bg-fixed bg-no-repeat h-screen m-auto " style="background-image: url('static/images/back1.png');">
+        <h3 class="text-center font-bold pattaya-regular text-6xl sm:text-8xl md:text-9xl">Lorem, ipsum.</h3> 
+    </div>
+
+    <div class="bg-white text-justify text-[#777] px-[80px] py-[50px]">
+
+        <div class="text-center ">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Cumque est dolore repellat suscipit.</p>
+            <p>Consectetur dolorem nostrum facilis perspiciatis?</p>
+            <p>Harum est quaerat ipsum quidem!</p>
+            <p>Minima, ipsam! Corrupti, dolores sapiente.</p>
+        </div>
+
+    </div>
+
+    <div class="content-center bg-cover bg-center bg-fixed bg-no-repeat h-[50dvh] m-auto" style="background-image: url('static/images/back2.png');">
+         
+    </div>
+
+    <div class="bg-white text-justify text-[#777] px-[80px] py-[50px]">
+
+        <div class="text-center ">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Cumque est dolore repellat suscipit.</p>
+            <p>Consectetur dolorem nostrum facilis perspiciatis?</p>
+            <p>Harum est quaerat ipsum quidem!</p>
+            <p>Minima, ipsam! Corrupti, dolores sapiente.</p>
+        </div>
+
+    </div>
+
+    <div class="content-center bg-cover bg-center bg-fixed bg-no-repeat h-screen m-auto" style="background-image: url('static/images/back1.png');">
+        
+    </div>
 }
